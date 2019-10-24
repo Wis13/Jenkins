@@ -1,4 +1,4 @@
-#!groove
+#!groovy
 //check ubuntu properties
 properties(disableConcurentBuilds()])
 
