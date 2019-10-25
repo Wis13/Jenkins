@@ -1,1 +1,20 @@
+#!groovy
+//check ubuntu properties
+properties(disableConcurentBuilds()])
 
+pipeline{
+    agent{
+            label 'master'
+            }
+     options {
+            buidDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+            timestamps()
+     }
+    stages {
+              stage("First_step") {
+              steps {
+                  sh 'ssh root@192.168.1.19 \'hostname\''
+                  }
+             }
+      }
+ }
